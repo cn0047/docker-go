@@ -15,5 +15,6 @@ RUN curl -O https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz \
 RUN go get -u golang.org/x/lint/golint
 RUN go get -u golang.org/x/tools/cmd/cover
 RUN go get -u github.com/mattn/goveralls
+RUN go get -u github.com/google/pprof
 
 CMD ["/usr/bin/go"]
