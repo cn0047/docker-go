@@ -19,5 +19,7 @@ RUN go get -u golang.org/x/tools/cmd/cover
 RUN go get -u github.com/mattn/goveralls
 RUN go get -u github.com/derekparker/delve/cmd/dlv && ln -s /app/bin/dlv /usr/bin/
 RUN go get -u github.com/google/pprof && ln -s /app/bin/pprof /usr/bin/
+# required for pprof
+RUN apt install -y python-pydot python-pydot-ng graphviz
 
 CMD ["/usr/bin/go"]
