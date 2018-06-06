@@ -3,8 +3,8 @@ FROM cn007b/ubuntu:17.10
 MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
 
 ENV GOROOT /usr/local/go/
-ENV GOPATH /opt/cn007b/
-RUN mkdir $GOPATH
+ENV GOPATH /opt/cn007b/go/
+RUN mkdir -p $GOPATH
 
 # go
 RUN curl -O https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz \
