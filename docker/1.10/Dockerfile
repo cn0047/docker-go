@@ -16,7 +16,7 @@ RUN curl -O https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz \
 # tools
 RUN go get -u golang.org/x/lint/golint && ln -s $GOPATH/bin/golint /usr/bin/
 RUN go get -u golang.org/x/tools/cmd/cover
-RUN go get -u github.com/mattn/goveralls
+RUN go get -u github.com/mattn/goveralls && ln -s $GOPATH/bin/goveralls /usr/bin/
 RUN go get -u github.com/derekparker/delve/cmd/dlv && ln -s $GOPATH/bin/dlv /usr/bin/
 RUN go get -u github.com/google/pprof && ln -s $GOPATH/bin/pprof /usr/bin/
 # required for pprof
