@@ -18,6 +18,7 @@ RUN go get -u golang.org/x/lint/golint && ln -s $GOPATH/bin/golint /usr/bin/
 RUN go get -u golang.org/x/tools/cmd/cover
 RUN go get -u github.com/mattn/goveralls && ln -s $GOPATH/bin/goveralls /usr/bin/
 RUN go get -u github.com/derekparker/delve/cmd/dlv && ln -s $GOPATH/bin/dlv /usr/bin/
+RUN go get -u github.com/codegangsta/gin && ln -s $GOPATH/bin/gin /usr/bin/
 RUN go get -u github.com/google/pprof && ln -s $GOPATH/bin/pprof /usr/bin/
 # required for pprof
 RUN apt install -y python-pydot python-pydot-ng graphviz
