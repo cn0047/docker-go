@@ -15,6 +15,9 @@ RUN curl -O https://storage.googleapis.com/golang/go1.10.linux-amd64.tar.gz \
 
 # tools
 RUN go get -u golang.org/x/lint/golint && ln -s $GOPATH/bin/golint /usr/bin/
+RUN go get -u gopkg.in/alecthomas/gometalinter.v2 \
+    && ln -s $GOPATH/bin/gometalinter.v2 /usr/bin/gometalinter \
+    && gometalinter --install
 RUN go get -u golang.org/x/tools/cmd/cover
 RUN go get -u github.com/mattn/goveralls && ln -s $GOPATH/bin/goveralls /usr/bin/
 RUN go get -u github.com/derekparker/delve/cmd/dlv && ln -s $GOPATH/bin/dlv /usr/bin/

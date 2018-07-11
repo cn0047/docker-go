@@ -10,6 +10,7 @@ This image contains pre-installed tools helpful for development purposes.
 # List of installed tools:
 
 * golint
+* gometalinter
 * cover
 * goveralls
 * dlv
