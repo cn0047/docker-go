@@ -9,11 +9,13 @@ This image contains pre-installed tools helpful for development purposes.
 
 # List of installed tools:
 
+* dep
 * golint
 * gometalinter
 * cover
 * goveralls
 * dlv
+* gin
 * pprof
 * google-app-enginee
 
