@@ -22,7 +22,7 @@ This image contains pre-installed tools helpful for development purposes.
 
 ### CLI:
 
-Create test script with purpose to check this docker image:
+Create test package with purpose to check this docker image:
 
 ````go
 package main
