@@ -20,7 +20,9 @@ This image contains pre-installed tools helpful for development purposes.
 
 # Usage:
 
-Create test script with purpose to check this docker image:
+### CLI:
+
+Create test package with purpose to check this docker image:
 
 ````go
 package main
@@ -34,6 +36,33 @@ Now you can run next command:
 
 ````sh
 docker run -it --rm -v $PWD:/app -w /app cn007b/go go run main.go
+````
+
+### Web
+
+````go
+package main
+
+import (
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello world!"))
+	})
+	http.ListenAndServe(":8080", nil)
+}
+````
+
+Now you can run next command:
+
+````sh
+docker run -it --rm -p 80:80 -v $PWD:/app -w /app cn007b/go sh -c \
+  'gin --port 80 --appPort 8080 run main.go'
+
+# and
+curl localhost:80
 ````
 
 # Google App Enginee:
