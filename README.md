@@ -9,13 +9,17 @@ This image contains pre-installed tools helpful for development purposes.
 
 # List of installed tools:
 
+* dep
 * golint
+* gometalinter (< v1.12)
+* golangci-lint
 * cover
 * goveralls
 * dlv
 * gin
+* gosec
 * pprof
-* google-app-enginee
+* google-app-enginee (v1.10)
 
 # Usage:
 
@@ -64,7 +68,7 @@ docker run -it --rm -p 80:80 -v $PWD:/app -w /app cn007b/go sh -c \
 curl localhost:80
 ````
 
-# Google App Enginee (go 1.10):
+### Google App Enginee (go 1.10):
 
 With purpose to use `google-app-enginee` please use next commands:
 
