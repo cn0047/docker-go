@@ -41,6 +41,18 @@ Now you can run next command:
 docker run -it --rm -v $PWD:/app -w /app cn007b/go go run main.go
 ````
 
+And you can run next command to check that everything is ok:
+
+````sh
+docker run -it --rm -v $PWD:/app -w /app cn007b/go sh -c '
+  go vet
+  go fmt ./...
+  golint ./...
+  golangci-lint run
+  gosec -tests ./...
+'
+````
+
 ### Web
 
 ````go
