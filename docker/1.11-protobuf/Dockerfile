@@ -1,6 +1,6 @@
 FROM cn007b/ubuntu:18.04-protobuf-3
 
-MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
+MAINTAINER V. Kovpak <cn007b@gmail.com>
 
 ENV GOROOT /usr/local/go/
 ENV GOPATH /opt/cn007b/go/

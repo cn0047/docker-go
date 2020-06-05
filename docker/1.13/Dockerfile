@@ -1,6 +1,6 @@
 FROM cn007b/ubuntu:20.04
 
-MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
+MAINTAINER V. Kovpak <cn007b@gmail.com>
 
 ARG GOLANG_ARCHIVE=go1.13.linux-amd64.tar.gz
 

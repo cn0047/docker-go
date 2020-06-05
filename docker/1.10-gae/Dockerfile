@@ -1,6 +1,6 @@
 FROM cn007b/go:1.10
 
-MAINTAINER Vladimir Kovpak <cn007b@gmail.com>
+MAINTAINER V. Kovpak <cn007b@gmail.com>
 
 # gcloud
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" \
