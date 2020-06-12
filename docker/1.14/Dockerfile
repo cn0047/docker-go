@@ -16,7 +16,7 @@ RUN curl -O https://storage.googleapis.com/golang/$GOLANG_ARCHIVE \
     && ln -s /usr/local/go/bin/go /usr/bin/
 
 # tools
-RUN apt-get install go-dep
+RUN apt-get install go-dep gotestsum
 RUN go get -u golang.org/x/lint/golint && ln -s $GOPATH/bin/golint /usr/bin/
 RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
   | sh -s -- -b $GOPATH/bin v1.27.0 && ln -s $GOPATH/bin/golangci-lint /usr/bin/
