@@ -16,3 +16,20 @@ jobs:
       run: docker build . --file ./docker/1.16-alpine/Dockerfile --tag cn007b/go:1.16-alpine-$(date +%s)
     - name: Build 1.17-alpine
       run: docker build . --file ./docker/1.17-alpine/Dockerfile --tag cn007b/go:1.17-alpine-$(date +%s)
+
+  push_to_gcr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup gcloud
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '290.0.1'
+        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+    - name: Configure docker for GCP
+      run: gcloud auth configure-docker
+    - name: Build docker image
+      run:  docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:latest .
+    - name: Push to Google Container Registry
+      run:  docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:latest
