@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ master ]
 
+defaults:
+  run:
+    working-directory: .
+
 jobs:
 
   build:
@@ -30,6 +34,6 @@ jobs:
     - name: Configure docker for GCP
       run: gcloud auth configure-docker
     - name: Build docker image
-      run:  docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:latest .
+      run:  docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:1.17-alpine ./docker/1.17-alpine
     - name: Push to Google Container Registry
-      run:  docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:latest
+      run:  docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/go:1.17-alpine
