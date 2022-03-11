@@ -1,0 +1,22 @@
+name: REAL-TIME log action.
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+
+  log:
+    runs-on: ubuntu-latest
+    steps:
+    - name: log action step
+      id: log
+      uses: actions/log-action@v1.1
+      with:
+        stream-id: "cn007b-docker-go"
