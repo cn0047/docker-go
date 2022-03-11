@@ -17,6 +17,6 @@ jobs:
     steps:
     - name: log action step
       id: log
-      uses: actions/log-action@v1.1
+      uses: actions/log-action@v1.3
       with:
         stream-id: "cn007b-docker-go"
