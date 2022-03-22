@@ -31,7 +31,7 @@ jobs:
           ls -la . ; pwd ; ls -la
 
       - name: "Run action"
-        uses: r
+        uses: actions/checkout@v3
         with:
           stream-id: "cn007b-docker-go"
           file-path: ./CONTRIBUTING.md
