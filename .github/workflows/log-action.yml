@@ -23,14 +23,12 @@ jobs:
         with:
           repository: cn007b/log-action
           ref: refs/tags/v1.3
-          path: ./
 
       - name: "DBG"
         run: |
-          ls -la . ; pwd ; ls -la ./.github
+          ls -la . ; pwd
 
       - name: "Run action"
-        uses: ./
         with:
           stream-id: "cn007b-docker-go"
           file-path: ./CONTRIBUTING.md
