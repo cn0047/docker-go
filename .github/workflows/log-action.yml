@@ -16,9 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repo"
+        id: r
         uses: actions/checkout@v3
 
       - name: "Checkout GitHub action repo"
+        id: ar
         uses: actions/checkout@v3
         with:
           repository: cn007b/log-action
@@ -26,9 +28,10 @@ jobs:
 
       - name: "DBG"
         run: |
-          ls -la . ; pwd
+          ls -la . ; pwd ; ls -la
 
       - name: "Run action"
+        uses: r
         with:
           stream-id: "cn007b-docker-go"
           file-path: ./CONTRIBUTING.md
