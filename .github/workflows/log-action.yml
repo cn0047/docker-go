@@ -6,13 +6,27 @@ on:
   pull_request:
     branches: [ master ]
 
+defaults:
+  run:
+    working-directory: .
+
 jobs:
 
   log:
     runs-on: ubuntu-latest
     steps:
-    - name: log action step
-      id: log
-      uses: cn007b/log-action@v1.13
-      with:
-        stream-id: "cn007b-docker-go"
+      - name: "Checkout repo"
+        uses: actions/checkout@v3
+
+      - name: "Checkout GitHub action repo"
+        uses: actions/checkout@v3
+        with:
+          repository: cn007b/log-action
+          ref: refs/tags/v1.13
+          path: ./.github/actions/log-action
+
+      - name: "Run action"
+        uses: ./.github/actions/log-action
+        with:
+          stream-id: "cn007b-docker-go"
+          file-path: ./CONTRIBUTING.md
