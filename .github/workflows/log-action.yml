@@ -20,4 +20,4 @@ jobs:
       uses: cn007b/log-action@v1.13
       with:
         stream-id: "cn007b-docker-go"
-        file-path: ./CONTRIBUTING.md
+        file-path: ${{ github.workspace }}/CONTRIBUTING.md
