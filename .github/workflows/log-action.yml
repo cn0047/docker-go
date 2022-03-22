@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: cn007b/log-action
-          ref: refs/tags/v1.13
+          ref: refs/tags/v1.14
           path: ./.github/actions/log-action
 
       - name: "Run action"
