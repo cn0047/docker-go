@@ -16,4 +16,3 @@ jobs:
       uses: cn007b/log-action@v1.13
       with:
         stream-id: "cn007b-docker-go"
-        file-path: /home/runner/work/docker-go/docker-go/CONTRIBUTING.md
